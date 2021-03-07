@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LR Realty and Development</title>
+     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    
+    <!-- CSS
+	============================================ -->
+   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
+
 <body>
-    {% block content %}{% endblock content %}
+    <!-- Header Section Start --> 
+<header class="header-wrapper section">
+    <!-- Top Bar -->
+    {% include 'partials/_topbar.html' %}
+
+    <!-- nav Bar -->
+    {% include 'partials/_navbar.html' %}
+</header>
+
+
+<!--    Main Content      -->
+    {% block content %} 
+    {% endblock content %}
+
+
+<!---    Footer     -->
+
+{% include 'partials/_footer.html' %}
+
+
+    <!-- Map js code here -->
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nDHy1dARR-Pa_2jjPCjvsOR4bcILYsM"></script>
+<!-- Plugins JS -->
+<script src="{% static 'js/plugins.js' %}"></script>
+<!-- Map Active JS -->
+<script src="{% static 'js/maplace-active.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
